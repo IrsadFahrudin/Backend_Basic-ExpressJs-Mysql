@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" href="inventory.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Daftar Inventory</h2>
+        <button class="add-button" onclick="showCreateForm()">Tambah Barang</button>
+
+        <!-- Form Tambah Barang -->
+        <div id="createForm" style="display: none; margin-top: 20px;">
+            <h3>Tambah Barang</h3>
+            <input type="text" id="nama_barang" placeholder="Nama Barang"><br><br>
+            <input type="text" id="gambar" placeholder="URL Gambar"><br><br>
+            <input type="text" id="deskripsi" placeholder="Deskripsi"><br><br>
+            <input type="text" id="kategori" placeholder="Kategori"><br><br>
+            <input type="text" id="status" placeholder="Status"><br><br>
+            <button onclick="createItem()">Simpan</button>
+            <button onclick="hideCreateForm()">Batal</button>
+        </div>
+
+        <!-- Form Edit Barang -->
+        <div id="editForm" style="display: none; margin-top: 20px;">
+            <h3>Edit Barang</h3>
+            <input type="hidden" id="id_inventory" value="">
+            <input type="text" id="edit_nama_barang" placeholder="Nama Barang"><br><br>
+            <input type="text" id="edit_gambar" placeholder="URL Gambar"><br><br>
+            <input type="text" id="edit_deskripsi" placeholder="Deskripsi"><br><br>
+            <input type="text" id="edit_kategori" placeholder="Kategori"><br><br>
+            <input type="text" id="edit_status" placeholder="Status"><br><br>
+            <button onclick="updateItem()">Update</button>
+            <button onclick="hideEditForm()">Batal</button>
+        </div>
+
+        <!-- Tabel Inventory -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Gambar</th>
+                    <th>Nama Barang</th>
+                    <th>Deskripsi</th>
+                    <th>Kategori</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="inventory.js"></script>
+</body>
+
+</html>
